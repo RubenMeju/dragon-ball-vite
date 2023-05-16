@@ -54,7 +54,6 @@ export default function MyCard() {
 
                 <div className='cardBody'>
                   <p className='name'>{name}</p>
-                  <p className='info'>{description}</p>
                 </div>
               </motion.div>
             </motion.div>
