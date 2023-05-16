@@ -1,0 +1,85 @@
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 9999;
+}
+.contModal {
+  width: 85%;
+  height: auto;
+  max-width: 500px;
+  background-color: blue;
+  border-radius: 0.75rem;
+}
+
+.modalName {
+  width: 100%;
+  margin: 0.5rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: whitesmoke;
+  text-align: center;
+}
+.btnExit {
+  float: right;
+  margin: 1rem;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.btnExit:after {
+  content: '\274c';
+  font-size: 24px;
+  color: #fff;
+  text-align: center;
+}
+.cardImage {
+  position: relative;
+
+  width: 90%;
+  height: 300px;
+  margin: auto;
+  margin-top: 2rem;
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+.image {
+  object-fit: cover;
+  object-position: top;
+}
+.modalBody {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.label {
+  margin-right: 0.5rem;
+  font-size: 1.1rem;
+  color: rgb(255, 179, 16);
+  font-weight: 500;
+}
+.info {
+  font-size: 1.1rem;
+  color: whitesmoke;
+  margin-bottom: 1rem;
+}
+
+.cardDetails,
+.groupDetails {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 784px) {
+  .cardImage {
+    height: 400px;
+  }
+}
