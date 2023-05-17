@@ -15,6 +15,8 @@
     "react/react-in-jsx-scope": "off",
     // missing space before function parenthesis
     "space-before-function-paren": "off",
-    "multiline-ternary": "off"
+    "multiline-ternary": "off",
+    // missing is props
+    "react/prop-types": "off"
   }
 }

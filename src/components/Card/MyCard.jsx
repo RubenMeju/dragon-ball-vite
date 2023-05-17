@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import { useData } from '../../hooks/useData'
 import './card.css'
 import { useContext } from 'react'
 import { ItemContext } from '../../App'
@@ -19,9 +18,10 @@ const cardVariants = {
   }
 }
 
-export default function MyCard() {
-  const { loading, data } = useData()
+export default function MyCard({ loading, data }) {
+  console.log('en mycard data', data)
   const { setItemData } = useContext(ItemContext)
+
   return (
     <>
       {loading ? (
