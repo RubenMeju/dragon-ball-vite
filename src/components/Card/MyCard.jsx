@@ -43,7 +43,7 @@ export default function MyCard({ loading, data }) {
                 variants={cardVariants}
                 whileHover={{
                   scale: 1.1,
-                  boxShadow: '-1px 5px 14px -1px rgba(0,0,0,0.75)',
+                  boxShadow: '-1px 5px 5px -1px rgba(0,0,0,0.3)',
                   transition: { duration: 0.4 }
                 }}
                 onClick={() => setItemData({ id, name, image, description })}

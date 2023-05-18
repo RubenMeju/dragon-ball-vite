@@ -8,3 +8,11 @@ header {
   font-size: 1.5rem;
   background-color: rgb(13, 99, 238);
 }
+
+@media screen and (min-width: 784px) {
+  .content {
+    width: 75%;
+    margin: auto;
+    background-color: green;
+  }
+}

@@ -11,15 +11,17 @@ export default function App() {
   const [itemData, setItemData] = useState()
   const { loading, data, handleSearch } = useData()
   return (
-    <div>
+    <>
       <header>
         <h1>Dragon Ball</h1>
       </header>
-      <SearchInput handleSearch={handleSearch} />
-      <ItemContext.Provider value={{ itemData, setItemData }}>
-        <MyCard loading={loading} data={data} />
-        <CardModal />
-      </ItemContext.Provider>
-    </div>
+      <div className='content'>
+        <SearchInput handleSearch={handleSearch} />
+        <ItemContext.Provider value={{ itemData, setItemData }}>
+          <MyCard loading={loading} data={data} />
+          <CardModal />
+        </ItemContext.Provider>
+      </div>
+    </>
   )
 }

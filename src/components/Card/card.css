@@ -5,22 +5,23 @@
   flex-direction: column;
   align-items: center;
   gap: 3rem;
-  background-color: green;
 }
 .card {
-  width: 320px;
+  width: 100%;
+  height: 400px;
   background-color: red;
   border-radius: 0.5rem;
   overflow: hidden;
+  cursor: pointer;
 }
 .contImage {
-  width: 100%;
-  height: 300px;
+  width: 330px;
+  height: 330px;
 }
 .image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: fill;
 }
 
 .cardBody {
@@ -36,10 +37,10 @@
 
 @media screen and (min-width: 784px) {
   .containerCards {
+    width: 100%;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    gap: 1rem;
   }
 }
