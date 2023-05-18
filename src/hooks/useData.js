@@ -25,6 +25,7 @@ export const useData = () => {
   }, [offset, search])
 
   const handleSearch = (e) => {
+    setOffset(0)
     console.log(e.target.value)
     setSearch(e.target.value)
   }
