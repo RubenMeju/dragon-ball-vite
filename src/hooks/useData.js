@@ -30,12 +30,12 @@ export const useData = () => {
   }
   const handlePreview = () => {
     console.log('preview')
-    setOffset(offset - 10)
+    setOffset(offset - 9)
   }
 
   const handleNext = () => {
     console.log('next')
-    setOffset(offset + 10)
+    setOffset(offset + 9)
   }
 
   return {
