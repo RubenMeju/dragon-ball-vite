@@ -4,12 +4,14 @@ import { CardModal } from './components/CardModal/CardModal'
 import './App.css'
 import SearchInput from './components/Search/SearchInput'
 import { useData } from './hooks/useData'
+import Paginator from './components/Paginator/Paginator'
+import Loader from './components/Loader/Loader'
 
 export const ItemContext = createContext()
 
 export default function App() {
   const [itemData, setItemData] = useState()
-  const { loading, data, handleSearch } = useData()
+  const { loading, data, handleSearch, handlePreview, handleNext } = useData()
   return (
     <>
       <header>
@@ -18,9 +20,10 @@ export default function App() {
       <div className='content'>
         <SearchInput handleSearch={handleSearch} />
         <ItemContext.Provider value={{ itemData, setItemData }}>
-          <MyCard loading={loading} data={data} />
+          {loading ? <Loader /> : <MyCard loading={loading} data={data} />}
           <CardModal />
         </ItemContext.Provider>
+        <Paginator handlePreview={handlePreview} handleNext={handleNext} />
       </div>
     </>
   )

@@ -6,22 +6,45 @@ export const useData = () => {
   const [data, setData] = useState({})
   const [search, setSearch] = useState('')
 
-  const getData = async (search = '') => {
+  const [offset, setOffset] = useState(0)
+
+  const getData = async (offset, search) => {
     setLoading(true)
-    await fetchCharacters(search).then((data) => {
+    await fetchCharacters(offset, search).then((data) => {
       setData(data)
-      setLoading(false)
+      setTimeout(() => {
+        setLoading(false)
+      }, 300)
     })
   }
 
   useEffect(() => {
-    getData(search)
-  }, [search])
+    console.log('ejecudato !!! useData effect valor offset')
+
+    getData(offset, search)
+  }, [offset, search])
 
   const handleSearch = (e) => {
     console.log(e.target.value)
     setSearch(e.target.value)
   }
+  const handlePreview = () => {
+    console.log('preview')
+    setOffset(offset - 10)
+  }
 
-  return { loading, data, search, handleSearch }
+  const handleNext = () => {
+    console.log('next')
+    setOffset(offset + 10)
+  }
+
+  return {
+    loading,
+    data,
+    offset,
+    handlePreview,
+    handleNext,
+    search,
+    handleSearch
+  }
 }
