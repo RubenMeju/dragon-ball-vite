@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import './card.css'
 import { useContext } from 'react'
 import { ItemContext } from '../../App'
+import Loader from '../Loader/Loader'
 
 const cardVariants = {
   offscreen: {
@@ -25,7 +26,7 @@ export default function MyCard({ loading, data }) {
   return (
     <>
       {loading ? (
-        <p>Cargando...</p>
+        <Loader />
       ) : (
         <div className='containerCards'>
           {data?.results.map(({ id, name, image, description }) => (
