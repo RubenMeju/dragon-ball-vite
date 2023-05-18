@@ -1,14 +1,23 @@
 import './paginator.css'
 
-export default function Paginator({ handlePreview, handleNext }) {
+export default function Paginator({ next, offset, handlePreview, handleNext }) {
+  console.log('el offset', offset)
   return (
     <div className='paginator'>
       <div className='buttons'>
-        <button type='button' onClick={handlePreview}>
+        <button
+          type='button'
+          onClick={handlePreview}
+          disabled={offset <= 0 && true}
+        >
           Preview
         </button>
 
-        <button type='button' onClick={handleNext}>
+        <button
+          type='button'
+          onClick={handleNext}
+          disabled={next === null && true}
+        >
           Next
         </button>
       </div>

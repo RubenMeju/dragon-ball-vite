@@ -11,7 +11,8 @@ export const ItemContext = createContext()
 
 export default function App() {
   const [itemData, setItemData] = useState()
-  const { loading, data, handleSearch, handlePreview, handleNext } = useData()
+  const { loading, data, handleSearch, handlePreview, handleNext, offset } =
+    useData()
   return (
     <>
       <header>
@@ -23,7 +24,12 @@ export default function App() {
           {loading ? <Loader /> : <MyCard loading={loading} data={data} />}
           <CardModal />
         </ItemContext.Provider>
-        <Paginator handlePreview={handlePreview} handleNext={handleNext} />
+        <Paginator
+          next={data.next}
+          offset={offset}
+          handlePreview={handlePreview}
+          handleNext={handleNext}
+        />
       </div>
     </>
   )
