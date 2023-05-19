@@ -31,7 +31,9 @@ export function CardModal() {
               }}
               whileTap={{ scale: 0.9 }}
               onClick={() => setItemData(null)}
-            ></motion.button>
+            >
+              X
+            </motion.button>
             <div className='body'>
               <div className='cardImage'>
                 <img
@@ -42,7 +44,7 @@ export function CardModal() {
               </div>
 
               <div className='cardDescription'>
-                <p className='name'>{itemData.name}</p>
+                <p className='character'>{itemData.name}</p>
                 <p className='description'>{itemData.description}</p>
 
                 <p className='info'>{itemData.species}</p>

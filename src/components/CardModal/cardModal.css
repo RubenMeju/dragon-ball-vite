@@ -13,34 +13,28 @@
 .contModal {
   position: relative;
   width: 85%;
-  max-width: 500px;
+  max-width: 700px;
   background-color: rgb(18, 105, 255);
   border-radius: 0.75rem;
-}
-.contheader {
-  width: 100%;
-  display: flex;
+  overflow: hidden;
 }
 
 .btnExit {
   position: absolute;
-
-  top: -20px;
-  right: -20px;
-  width: 44px;
-  height: 44px;
+  right: 0;
+  width: 32px;
+  height: 32px;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
   border: none;
-  border-radius: 50%;
-  background-color: aliceblue;
-
+  background-color: transparent;
+  color: aliceblue;
   cursor: pointer;
 }
-.btnExit:after {
-  content: '\274c';
-  font-size: 24px;
-  color: #fff;
-  text-align: center;
-}
+
 .body {
   width: 90%;
   display: flex;
@@ -50,9 +44,7 @@
 .cardImage {
   width: 100%;
   height: 300px;
-  margin-top: 1rem;
-  border-radius: 0.75rem;
-  overflow: hidden;
+  margin-top: 2rem;
 }
 .image {
   width: 100%;
@@ -66,27 +58,29 @@
   flex-direction: column;
   gap: 0.5rem;
 }
+.character {
+  font-size: 2rem;
+  color: aliceblue;
+}
 .description {
   padding-right: 1rem;
-}
-p {
-  color: aliceblue;
+  font-size: 1.1rem;
+  color: gainsboro;
 }
 
 @media screen and (min-width: 784px) {
   .body {
     width: 100%;
-    height: 350px;
+    height: 450px;
     flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    background-color: red;
   }
   .cardImage {
     width: 50%;
     height: 100%;
     margin-top: 0;
-    background-color: violet;
+    border-top-right-radius: 3rem;
+    border-bottom-right-radius: 3rem;
+    overflow: hidden;
   }
   .cardDescription {
     width: 50%;
