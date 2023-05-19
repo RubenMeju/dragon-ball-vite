@@ -6,6 +6,7 @@ import SearchInput from './components/Search/SearchInput'
 import { useData } from './hooks/useData'
 import Paginator from './components/Paginator/Paginator'
 import Loader from './components/Loader/Loader'
+import Logo from './assets/dragonball.png'
 
 export const ItemContext = createContext()
 
@@ -16,7 +17,7 @@ export default function App() {
   return (
     <>
       <header>
-        <h1>Dragon Ball</h1>
+        <img src={Logo} className='logo' alt='Dragon Ball' />
       </header>
       <div className='content'>
         <SearchInput handleSearch={handleSearch} />

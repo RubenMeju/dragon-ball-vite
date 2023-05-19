@@ -43,11 +43,17 @@ export function CardModal() {
                 />
               </div>
 
-              <div className='cardDescription'>
+              <div className='modalDescription'>
                 <p className='character'>{itemData.name}</p>
+                <ul>
+                  <li>
+                    <p>{itemData.species}</p>
+                  </li>
+                  <li>
+                    <p>{itemData.gender}</p>
+                  </li>
+                </ul>
                 <p className='description'>{itemData.description}</p>
-
-                <p className='info'>{itemData.species}</p>
               </div>
             </div>
           </motion.div>
