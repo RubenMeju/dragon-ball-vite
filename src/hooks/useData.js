@@ -5,17 +5,21 @@ export const useData = () => {
   const [loading, setLoading] = useState(true)
   const [data, setData] = useState({})
   const [search, setSearch] = useState('')
-
+  const [error, setError] = useState(null)
   const [offset, setOffset] = useState(0)
 
   const getData = async (offset, search) => {
     setLoading(true)
-    await fetchCharacters(offset, search).then((data) => {
-      setData(data)
+    try {
+      const newData = await fetchCharacters(offset, search)
+      setData(newData)
+    } catch (error) {
+      setError('Algo ha salido mal!')
+    } finally {
       setTimeout(() => {
         setLoading(false)
       }, 300)
-    })
+    }
   }
 
   useEffect(() => {
@@ -36,6 +40,7 @@ export const useData = () => {
 
   return {
     loading,
+    error,
     data,
     offset,
     handlePreview,

@@ -7,13 +7,25 @@ import { useData } from './hooks/useData'
 import Paginator from './components/Paginator/Paginator'
 import Loader from './components/Loader/Loader'
 import Logo from './assets/dragonball.png'
+import ErrorMsg from './components/ErrorMsg/ErrorMsg'
 
 export const ItemContext = createContext()
 
 export default function App() {
   const [itemData, setItemData] = useState()
-  const { loading, data, handleSearch, handlePreview, handleNext, offset } =
-    useData()
+  const {
+    loading,
+    error,
+    data,
+    handleSearch,
+    handlePreview,
+    handleNext,
+    offset
+  } = useData()
+
+  if (error) {
+    return <ErrorMsg error={error} />
+  }
   return (
     <>
       <header>
