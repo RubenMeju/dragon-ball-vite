@@ -32,34 +32,21 @@ export function CardModal() {
               whileTap={{ scale: 0.9 }}
               onClick={() => setItemData(null)}
             ></motion.button>
+            <div className='body'>
+              <div className='cardImage'>
+                <img
+                  src={itemData.image}
+                  className='image'
+                  alt='Logo Dragon Ball'
+                />
+              </div>
 
-            <div className='cardImage'>
-              <img
-                src={itemData.image}
-                className='image'
-                alt='Logo Dragon Ball'
-              />
-            </div>
+              <div className='cardDescription'>
+                <p className='name'>{itemData.name}</p>
+                <p className='description'>{itemData.description}</p>
 
-            <div className='modalBody'>
-              <p className='modalName'>{itemData.name}</p>
-              <p className='label'>Descripción</p>
-              <p className='info'>{itemData.description}</p>
-
-              {itemData.planet && (
-                <div className='cardDetails'>
-                  <div className='groupDetails'>
-                    <p className='label'>Planeta:</p>
-                    <p className='info'>
-                      {itemData.planet && itemData.planet.name}
-                    </p>
-                  </div>
-                  <div className='groupDetails'>
-                    <p className='label'>Especie:</p>
-                    <p className='info'>{itemData.species}</p>
-                  </div>
-                </div>
-              )}
+                <p className='info'>{itemData.species}</p>
+              </div>
             </div>
           </motion.div>
         </motion.div>

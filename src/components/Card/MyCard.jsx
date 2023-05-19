@@ -29,7 +29,7 @@ export default function MyCard({ loading, data }) {
         <Loader />
       ) : (
         <div className='containerCards'>
-          {data?.results.map(({ id, name, image, description }) => (
+          {data?.results.map(({ id, name, image, description, species }) => (
             <motion.div
               key={id}
               layoutId={id}
@@ -47,7 +47,9 @@ export default function MyCard({ loading, data }) {
                   boxShadow: '-1px 5px 5px -1px rgba(0,0,0,0.3)',
                   transition: { duration: 0.4 }
                 }}
-                onClick={() => setItemData({ id, name, image, description })}
+                onClick={() =>
+                  setItemData({ id, name, image, description, species })
+                }
               >
                 <div className='contImage'>
                   <img src={image} className='image' alt='Logo Dragon Ball' />
