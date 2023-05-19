@@ -5,7 +5,6 @@ import { ItemContext } from '../../App'
 
 export function CardModal() {
   const { itemData, setItemData } = useContext(ItemContext)
-  console.log(itemData)
 
   return (
     <AnimatePresence>

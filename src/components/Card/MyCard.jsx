@@ -20,7 +20,6 @@ const cardVariants = {
 }
 
 export default function MyCard({ loading, data }) {
-  console.log('en mycard data', data)
   const { setItemData } = useContext(ItemContext)
 
   return (

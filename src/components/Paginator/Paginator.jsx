@@ -1,7 +1,6 @@
 import './paginator.css'
 
 export default function Paginator({ next, offset, handlePreview, handleNext }) {
-  console.log('el offset', offset)
   return (
     <div className='paginator'>
       <div className='buttons'>

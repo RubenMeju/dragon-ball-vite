@@ -19,23 +19,18 @@ export const useData = () => {
   }
 
   useEffect(() => {
-    console.log('ejecudato !!! useData effect valor offset')
-
     getData(offset, search)
   }, [offset, search])
 
   const handleSearch = (e) => {
     setOffset(0)
-    console.log(e.target.value)
     setSearch(e.target.value)
   }
   const handlePreview = () => {
-    console.log('preview')
     setOffset(offset - 9)
   }
 
   const handleNext = () => {
-    console.log('next')
     setOffset(offset + 9)
   }
 
